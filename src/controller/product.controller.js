@@ -4,8 +4,8 @@ import createError from "../utils/createError.js"; // Importing utility function
 // Controller function to create a new product
 export const createProduct = async (req, res, next) => {
   try {
-    const { Name, size, qty, price, status } = req.body; // Destructuring request body
-    const existingProduct = await Product.find({ Name, size }); // Checking if the product already exists
+    const { name, size, qty, price, status, description } = req.body; // Destructuring request body
+    const existingProduct = await Product.find({ name, size }); // Checking if the product already exists
 
     // If product already exists, return a 403 Forbidden error
     if (existingProduct[0])
