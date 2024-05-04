@@ -5,7 +5,7 @@ const { Schema } = mongoose; // Destructuring Schema from mongoose
 // Defining schema for product
 const productSchema = new Schema(
   {
-    Name: {
+    name: {
       type: String,
       required: true, // Name is required
     },
@@ -31,6 +31,10 @@ const productSchema = new Schema(
       type: [String], // Array of strings (URLs)
       default: [], // Default value is an empty array
     },
+    description:{
+      type :String,
+      require : true
+    }
   },
   {
     timestamps: true, // Adding createdAt and updatedAt fields
